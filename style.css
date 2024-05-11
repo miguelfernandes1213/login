@@ -1,0 +1,219 @@
+ /* Define variáveis CSS para serem usadas em todo o documento */
+/* config.css */
+:root {
+    --baseColor: #606468; /* Define a cor base */
+}
+
+/* Define regras para centralizar elementos */
+/* helpers/align.css */
+.align {
+    display: grid; /* Usa um layout de grid */
+    place-items: center; /* Centraliza os itens horizontal e verticalmente */
+}
+
+/* Define um container com largura máxima e centralizado */
+/* helpers/grid.css */
+.grid {
+    inline-size: 90%; /* Largura do container de 90% */
+    margin-inline: auto; /* Margem horizontal automática para centralizar */
+    max-inline-size: 20rem; /* Largura máxima do container */
+}
+
+/* Define regras para esconder elementos visualmente */
+/* helpers/hidden.css */
+.hidden {
+    border: 0; /* Remove a borda */
+    clip: rect(0 0 0 0); /* Define uma área de corte vazia */
+    height: 1px; /* Altura de 1 pixel */
+    margin: -1px; /* Margem negativa para esconder completamente */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa a área definida */
+    padding: 0; /* Sem padding */
+    position: absolute; /* Posiciona absolutamente */
+    width: 1px; /* Largura de 1 pixel */
+}
+
+/* Define variáveis CSS para ícones */
+/* helpers/icon.css */
+:root {
+    --iconFill: var(--baseColor); /* Define a cor de preenchimento dos ícones */
+}
+
+/* Esconde os ícones */
+.icons {
+    display: none;
+}
+
+/* Define o estilo padrão dos ícones */
+.icon {
+    block-size: 1em; /* Tamanho do ícone */
+    display: inline-block; /* Define como bloco inline */
+    fill: var(--iconFill); /* Preenche o ícone com a cor definida */
+    inline-size: 1em; /* Tamanho do ícone */
+    vertical-align: middle; /* Alinha verticalmente */
+}
+
+/* Define as configurações básicas de fonte e cor do corpo */
+/* layout/base.css */
+:root {
+    --htmlFontSize: 100%; /* Tamanho de fonte base de 100% */
+
+    --bodyBackgroundColor: #2c3338; /* Cor de fundo do corpo */
+    --bodyColor: var(--baseColor); /* Cor do texto do corpo */
+    --bodyFontFamily: "Open Sans"; /* Família de fontes do corpo */
+    --bodyFontFamilyFallback: sans-serif; /* Fonte de fallback */
+    --bodyFontSize: 0.875rem; /* Tamanho da fonte do corpo */
+    --bodyFontWeight: 400; /* Peso da fonte do corpo */
+    --bodyLineHeight: 1.5; /* Altura da linha do corpo */
+}
+
+/* Define o box-sizing como border-box e o tamanho de fonte do HTML */
+* {
+    box-sizing: inherit; /* Herda o box-sizing */
+}
+
+html {
+    box-sizing: border-box; /* Define o box-sizing como border-box */
+    font-size: var(--htmlFontSize); /* Define o tamanho de fonte do HTML */
+}
+
+/* Define as configurações de fonte e cor do corpo */
+body {
+    background-color: var(--bodyBackgroundColor); /* Cor de fundo do corpo */
+    color: var(--bodyColor); /* Cor do texto do corpo */
+    font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback); /* Família de fontes do corpo */
+    font-size: var(--bodyFontSize); /* Tamanho da fonte do corpo */
+    font-weight: var(--bodyFontWeight); /* Peso da fonte do corpo */
+    line-height: var(--bodyLineHeight); /* Altura da linha do corpo */
+    margin: 0; /* Remove as margens */
+    min-block-size: 100vh; /* Define o tamanho mínimo da altura do bloco como 100% da altura da janela */
+}
+
+/* Define as configurações de cor dos links */
+/* modules/anchor.css */
+:root {
+    --anchorColor: #eee; /* Cor dos links */
+}
+
+a {
+    color: var(--anchorColor); /* Define a cor dos links */
+    outline: 0; /* Remove o contorno ao focar */
+    text-decoration: none; /* Remove a decoração de texto padrão */
+}
+
+a:focus,
+a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao focar ou passar o mouse */
+}
+
+/* Define as configurações de espaçamento dos formulários */
+/* modules/form.css */
+:root {
+    --formGap: 0.875rem; /* Espaçamento entre os campos do formulário */
+}
+
+input {
+    background-image: none; /* Remove a imagem de fundo padrão do campo de entrada */
+    border: 0; /* Remove a borda */
+    color: inherit; /* Usa a cor de texto padrão */
+    font: inherit; /* Usa a fonte padrão */
+    margin: 0; /* Remove as margens */
+    outline: 0; /* Remove o contorno ao focar */
+    padding: 0; /* Remove o preenchimento */
+    transition: background-color 0.3s; /* Adiciona uma transição suave para a cor de fundo */
+}
+
+input[type="submit"] {
+    cursor: pointer; /* Altera o cursor ao passar por cima */
+}
+
+/* Define o layout do formulário */
+.form {
+    display: grid; /* Usa um layout de grid */
+    gap: var(--formGap); /* Define o espaçamento entre os itens */
+}
+
+.form input[type="password"],
+.form input[type="text"],
+.form input[type="submit"] {
+    inline-size: 100%; /* Define a largura dos campos como 100% */
+}
+
+.form__field {
+    display: flex; /* Usa um layout flexível */
+}
+
+.form__input {
+    flex: 1; /* Faz com que o campo de entrada ocupe o espaço disponível */
+}
+
+/* Define as configurações de estilo do formulário de login */
+/* modules/login.css */
+:root {
+    --loginBorderRadus: 0.25rem; /* Raio da borda dos campos */
+    --loginColor: #eee; /* Cor do texto do formulário */
+
+    --loginInputBackgroundColor: #3b4148; /* Cor de fundo dos campos de entrada */
+    --loginInputHoverBackgroundColor: #434a52; /* Cor de fundo dos campos de entrada ao passar o mouse */
+
+    --loginLabelBackgroundColor: #363b41; /* Cor de fundo das labels dos campos */
+
+    --loginSubmitBackgroundColor: #ea4c88; /* Cor de fundo do botão de enviar */
+    --loginSubmitColor: #eee; /* Cor do texto do botão de enviar */
+    --loginSubmitHoverBackgroundColor: #d44179; /* Cor de fundo do botão de enviar ao passar o mouse */
+}
+
+/* Estilo do formulário de login */
+.login {
+    color: var(--loginColor); /* Cor do texto */
+}
+
+.login label,
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="submit"] {
+    border-radius: var(--loginBorderRadus); /* Raio da borda dos campos */
+    padding: 1rem; /* Preenchimento dos campos */
+}
+
+.login label {
+    background-color: var(--loginLabelBackgroundColor); /* Cor de fundo das labels */
+    border-bottom-right-radius: 0; /* Raio da borda inferior direita */
+    border-top-right-radius: 0; /* Raio da borda superior direita */
+    padding-inline: 1.25rem; /* Preenchimento das labels */
+}
+
+.login input[type="password"],
+.login input[type="text"] {
+    background-color: var(--loginInputBackgroundColor); /* Cor de fundo dos campos de entrada */
+    border-bottom-left-radius: 0; /* Raio da borda inferior esquerda */
+    border-top-left-radius: 0; /* Raio da borda superior esquerda */
+}
+
+.login input[type="password"]:focus,
+.login input[type="password"]:hover,
+.login input[type="text"]:focus,
+.login input[type="text"]:hover {
+    background-color: var(--loginInputHoverBackgroundColor); /* Cor de fundo ao passar o mouse */
+}
+
+.login input[type="submit"] {
+    background-color: var(--loginSubmitBackgroundColor); /* Cor de fundo do botão de enviar */
+    color: var(--loginSubmitColor); /* Cor do texto do botão de enviar */
+    font-weight: 700; /* Peso da fonte do botão de enviar */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+}
+
+.login input[type="submit"]:focus,
+.login input[type="submit"]:hover {
+    background-color: var(--loginSubmitHoverBackgroundColor); /* Cor de fundo ao passar o mouse */
+}
+
+/* Define as configurações de estilo do texto */
+/* modules/text.css */
+p {
+    margin-block: 1.5rem; /* Espaçamento entre os parágrafos */
+}
+
+.text--center {
+    text-align: center; /* Alinha o texto ao centro */
+}

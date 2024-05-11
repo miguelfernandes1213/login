@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8"> <!-- Define o charset do documento como UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Define o modo de compatibilidade com o IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define a viewport para dispositivos móveis -->
+    <title>Formulário Netflix</title> <!-- Título da página -->
+    <link rel="stylesheet" href="style.css"> <!-- Importa o arquivo CSS externo -->
+</head>
+
+<body class="align"> <!-- Define a classe do body como 'align' -->
+
+    <div class="grid"> <!-- Define um container com a classe 'grid' -->
+
+        <form action="https://httpbin.org/post" method="POST" class="form login"> <!-- Formulário de login -->
+            <!-- Campo de nome de usuário -->
+            <div class="form__field">
+                <label for="login__username"><svg class="icon">
+                        <use xlink:href="icons.svg#icon-user"></use> <!-- Ícone de usuário -->
+                    </svg><span class="hidden">Nome de usuário</span></label> <!-- Label para o campo -->
+                <input autocomplete="username" id="login__username" type="text" name="username" class="form__input"
+                    placeholder="Nome de usuário" required> <!-- Campo de texto para o nome de usuário -->
+            </div>
+
+            <!-- Campo de senha -->
+            <div class="form__field">
+                <label for="login__password"><svg class="icon">
+                        <use xlink:href="icons.svg#icon-lock"></use> <!-- Ícone de cadeado -->
+                    </svg><span class="hidden">Senha</span></label> <!-- Label para o campo -->
+                <input id="login__password" type="password" name="password" class="form__input" placeholder="Senha"
+                    required> <!-- Campo de senha -->
+            </div>
+
+            <!-- Botão de enviar -->
+            <div class="form__field">
+                <input type="submit" value="Entrar"> <!-- Botão de enviar -->
+            </div>
+
+        </form>
+
+        <!-- Link para cadastro -->
+        <p class="text--center">Ainda não é membro? <a href="#">Cadastre-se agora</a> <svg class="icon">
+                <use xlink:href="icons.svg#icon-arrow-right"></use> <!-- Ícone de seta -->
+            </svg></p>
+
+    </div>
+
+    <script src="icons.svg"></script> <!-- Importa o arquivo SVG de ícones -->
+
+</body>
+
+</html>
